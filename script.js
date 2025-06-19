@@ -3,8 +3,8 @@ const audioPlayer = (() => {
   const audio = new Audio();
   let isPlaying = false;
   const songs = [
-    "/mp3/Deva Shree Ganesha Agneepath 128 Kbps.mp3",
-    "/mp3/abcd-Sadda Dil VI Tu (Ga Ga Ga Ganpati).mp3"
+    "mp3/Deva Shree Ganesha Agneepath 128 Kbps.mp3",
+    "mp3/abcd-Sadda Dil VI Tu (Ga Ga Ga Ganpati).mp3"
   ];
   let currentSongIndex = 0;
 
