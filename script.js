@@ -3,25 +3,24 @@ const audioPlayer = (() => {
   const audio = new Audio();
   let isPlaying = false;
   const songs = [
-    "../mp3/Deva Shree Ganesha Agneepath 128 Kbps.mp3",
-   "../mp3/abcd-Sadda Dil VI Tu (Ga Ga Ga Ganpati).mp3"
-
+    "/mp3/Deva Shree Ganesha Agneepath 128 Kbps.mp3",
+    "/mp3/abcd-Sadda Dil VI Tu (Ga Ga Ga Ganpati).mp3"
   ];
   let currentSongIndex = 0;
 
   function init() {
     audio.src = songs[currentSongIndex];
     const playBtn = document.querySelector('.play_btn');
-    
-    playBtn.addEventListener('click', function() {
+
+    playBtn.addEventListener('click', function () {
       // Add click transition class
       this.classList.add('click-transition');
-      
+
       // Remove transition class after animation completes
       setTimeout(() => {
         this.classList.remove('click-transition');
       }, 300);
-      
+
       togglePlay();
     });
 
@@ -42,7 +41,7 @@ const audioPlayer = (() => {
         isPlaying = true;
         updatePlayButton();
         document.querySelector('.img_box').classList.add('playing');
-        
+
         // Add ripple effect
         createRippleEffect();
       })
@@ -70,7 +69,7 @@ const audioPlayer = (() => {
       // Smooth icon transition
       icon.style.transition = 'transform 0.3s ease, color 0.3s ease';
       icon.className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
-      
+
       // Bounce effect
       icon.style.transform = 'scale(1.2)';
       setTimeout(() => {
@@ -84,7 +83,7 @@ const audioPlayer = (() => {
     const ripple = document.createElement('span');
     ripple.classList.add('ripple-effect');
     playBtn.appendChild(ripple);
-    
+
     setTimeout(() => {
       ripple.remove();
     }, 1000);
@@ -109,11 +108,11 @@ document.addEventListener('DOMContentLoaded', audioPlayer.init);
 const menu = document.getElementById('menuBar');
 const close = document.getElementById('close');
 const sidebar = document.getElementById('sidebar');
-menu.addEventListener('click', function(){
+menu.addEventListener('click', function () {
   sidebar.style.display = 'flex';
 });
 
-close.addEventListener('click', function(){
+close.addEventListener('click', function () {
   sidebar.style.display = 'none';
 });
 
